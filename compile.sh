@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CHECKOUT="${1:-master}"
+CHECKOUT="${1:-v1.87}"
 
 docker build -f Dockerfile-stretch -t s3fs-builder:stretch .
 docker build -f Dockerfile-buster -t s3fs-builder:buster .
