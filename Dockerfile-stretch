@@ -1,0 +1,16 @@
+FROM debian:stretch
+
+RUN apt-get update && apt-get install -y --no-install-suggests \
+  git \
+  libcurl4-openssl-dev \
+  libfuse-dev \
+  libssl1.0-dev \
+  libxml2-dev \
+  packaging-dev \
+&& apt-get clean
+
+ADD entrypoint.sh /bin/entrypoint.sh
+
+WORKDIR /code
+
+ENTRYPOINT ["/bin/entrypoint.sh"]
